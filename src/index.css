@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #0a1128;
+  --color-brand-green: #788023;
+  --color-brand-slate: #1e293b;
+  --color-brand-bg: #f8fafc;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-brand-bg)] text-slate-900 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Neomorphic Card */
+  .neo-card {
+    @apply bg-[var(--color-brand-bg)] border border-white/60 rounded-3xl transition-all duration-300;
+    box-shadow: 15px 15px 40px #e2e8f0, -15px -15px 40px #ffffff;
+  }
+
+  /* Neomorphic Button - Primary (Green) */
+  .neo-btn-primary {
+    @apply bg-brand-green text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 cursor-pointer;
+    box-shadow: 6px 6px 12px #cbd5e1, -6px -6px 12px #ffffff;
+  }
+  .neo-btn-primary:hover {
+    @apply brightness-110;
+    box-shadow: 2px 2px 5px #cbd5e1, -2px -2px 5px #ffffff;
+  }
+
+  /* Neomorphic Button - Secondary (Navy) */
+  .neo-btn-secondary {
+    @apply bg-brand-navy text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 cursor-pointer;
+    box-shadow: 6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff;
+  }
+  .neo-btn-secondary:hover {
+    @apply bg-slate-800;
+    box-shadow: 2px 2px 5px #d1d9e6, -2px -2px 5px #ffffff;
+  }
+
+  /* Neomorphic Button - Ghost/White */
+  .neo-btn-ghost {
+    @apply bg-[var(--color-brand-bg)] text-slate-600 font-bold px-6 py-3 rounded-2xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 cursor-pointer;
+    box-shadow: 6px 6px 12px #e2e8f0, -6px -6px 12px #ffffff;
+  }
+  .neo-btn-ghost:hover {
+    @apply text-brand-green;
+    box-shadow: 2px 2px 5px #e2e8f0, -2px -2px 5px #ffffff;
+  }
+
+  /* Premium Input */
+  .neo-input {
+    @apply w-full px-5 py-3 bg-[var(--color-brand-bg)] border-none rounded-2xl outline-none transition-all duration-200 focus:ring-2 focus:ring-brand-green/30;
+    box-shadow: inset 6px 6px 12px #e2e8f0, inset -6px -6px 12px #ffffff;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm border border-white/20;
+  }
+
+  .glass-sidebar {
+    @apply bg-brand-navy text-white shadow-2xl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-brand-green transition-colors border-4 border-transparent bg-clip-padding;
+}
